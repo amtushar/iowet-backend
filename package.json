@@ -1,0 +1,28 @@
+{
+  "name": "mar-restservice-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "set NODE_ENV=development&& nodemon main.js",
+    "pm2-start": "set NODE_ENV=production&& pm2 start main.js --name MarDB --watch",
+    "pm2-stop": "pm2 stop MarDB",
+    "pm2-restart": "set NODE_ENV=production&& pm2 restart MarDB"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-pino-logger": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.4",
+    "nodemon": "^3.1.4",
+    "pino-pretty": "^11.2.2",
+    "uuid": "^11.1.0"
+  }
+}
