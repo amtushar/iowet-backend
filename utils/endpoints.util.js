@@ -19,9 +19,11 @@ module.exports = class endpoints {
     static ENDPOINT_GROUP_USER_VERIFICATION = "/1.0.0/usersverification"
     static ENDPOINT_GROUP_USER = "/1.0.0/users"
     static ENDPOINT_GROUP_COURSE = "/1.0.0/courses"
+    static ENDPOINT_GROUP_SUBJECT = "/1.0.0/subjects"
+    static ENDPOINT_GROUP_STUDENT = "/1.0.0/students"
+    static ENDPOINT_GROUP_RESULT = "/1.0.0/results"
+    static ENDPOINT_GROUP_PUBLIC = "/1.0.0/public"
     static ENDPOINT_GROUP_USER_PROFILE = "/1.0.0/userprofile"
-    static ENDPOINT_GROUP_VENUE = "/1.0.0/venues"
-    static ENDPOINT_GROUP_FACILITY = "/1.0.0/facilities"
   
 
     // endpoints for different versions
@@ -35,10 +37,31 @@ module.exports = class endpoints {
     static ENDPOINT_USER_VERIFICATION_CHECK = "/userverificationcheck" // isVerified
     static ENDPOINT_USER_VERIFICATION_UPDATE = "/userverificationupdate" // isVerified
 
+    static ENDPOINT_READ_PUBLIC_COURSES = "/publiccourses"  //reading multiple objects
+    static ENDPOINT_READ_PUBLIC_RESULT = "/publicresult"  //reading multiple objects
     // endpoints for coursegroup
     static ENDPOINT_COURSE = "/course" //creating one or multiple object
+    static ENDPOINT_UPDATE_COURSE = "/updatecourse" //creating one or multiple object
     static ENDPOINT_READ_COURSES = "/courses"  //reading multiple objects
+    static ENDPOINT_READ_COURSE_NAMES = "/coursenames"  //reading multiple objects
     static ENDPOINT_UPDATE_COURSE = "/updatecourse"  //reading multiple objects
+
+     // endpoints for subjectgroup
+    static ENDPOINT_SUBJECT = "/subject" //creating one or multiple object
+    static ENDPOINT_READ_SUBJECTS = "/subjects"  //reading multiple objects
+    static ENDPOINT_READ_SUBJECT_BY_COURSE = "/subjectsbycourse"  //reading multiple objects
+    static ENDPOINT_UPDATE_SUBJECT = "/updatesubject"  //reading multiple objects
+
+     // endpoints for studentgroup
+    static ENDPOINT_STUDENT = "/student" //creating one or multiple object
+    static ENDPOINT_READ_STUDENTS = "/students"  //reading multiple objects
+    static ENDPOINT_READ_STUDENT_BY_ROLL = "/studentbyroll"  //reading multiple objects
+    static ENDPOINT_UPDATE_STUDENT = "/updatestudent"  //reading multiple objects
+
+     // endpoints for resultgroup
+    static ENDPOINT_RESULT = "/result" //creating one or multiple object
+    static ENDPOINT_READ_RESULT_BY_ROLL = "/resultbyroll"  //reading multiple objects
+    static ENDPOINT_UPDATE_RESULT = "/updateresult"  //reading multiple objects
 
 
     // endpoints for usergroup
@@ -54,25 +77,6 @@ module.exports = class endpoints {
     // endpoints for logged in user
     static ENDPOINT_CURRENT_USER = "/currentuser"  //for recapturing user
 
-    // endpoints for venuegroup
-    static ENDPOINT_VENUE = "/venue" //creating one or multiple object
-    static ENDPOINT_VENUES = "/venues"  //reading multiple objects
-    static ENDPOINT_VENUE_NAME = "/venuename"  //reading one venue name by venue id
-    static ENDPOINT_VENUES_ACCESS = "/venueaccess"  //reading multiple objects
-    static ENDPOINT_VENUES_EXISTING_FILTER = "/venuefilter"  //reading multiple objects
-    static ENDPOINT_VENUECHECK = "/venuecheck"
-    static ENDPOINT_ONE_VENUE = "/venue/:id" // reading one object using id
-    static ENDPOINT_VENUE_SEARCH = "/venuesearch"  //reading multiple venues with query
-
-
-    // endpoints for venueArenagroup
-    static ENDPOINT_FACILITY = "/facility" //creating one or multiple object
-    static ENDPOINT_FACILITIES = "/facilities"  //reading multiple objects
-    static ENDPOINT_ONE_FACILITY = "/facility/:id" // reading one object using id
-    static ENDPOINT_VENUE_FACILITY_SEARCH = "/facilitysearch"  //reading multiple venues with query
-    static ENDPOINT_VENUE_FACILITY_CLASS_SEARCH = "/facilityclasssearch"  //reading multiple venues with query
-    static ENDPOINT_VENUE_FACILITIES = "/venuefacilities"  //reading facilties of a particular venue
-    static ENDPOINT_FACILITY_CHECK = "/facilitycheck"
 
 
 }

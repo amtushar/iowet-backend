@@ -16,6 +16,10 @@ const userAuth = require('./middleware/authentication.js');
 const userProfileService = require('./services/userprofile.service.js');
 const userLoginService = require('./services/userlogin.service.js');
 const courseService = require('./services/course.service.js');
+const subjectService = require('./services/subject.service.js');
+const studentService = require('./services/student.service.js');
+const resultService = require('./services/result.service.js');
+const publicService = require('./services/public.service.js');
 
 const restService = express();
 const consoleLogger = engine.generateConsoleLogger();
@@ -26,9 +30,11 @@ const corsOptions = {
             return callback(null, true);  // ✅ Use `true`, NOT `'*'`
         }
         const allowedOrigins = [
-            'https://benefitplus.com',
-            'https://www.benefitplus.com',
-            'http://localhost:3000'
+            'http://localhost:3000',
+            'http://13.205.250.66',
+            'https://iowet.in',
+            'https://www.iowet.in'
+
         ];
 
         if (allowedOrigins.includes(origin)) {
@@ -48,7 +54,11 @@ restService.use(express.json());
 
 // admin portal
 restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_USER_LOGIN, userLoginService);
+restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_PUBLIC, publicService);
 restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_COURSE, userAuth, courseService); // courses service
+restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_SUBJECT, userAuth, subjectService); // subjects service
+restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_STUDENT, userAuth, studentService); // students service
+restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_RESULT, userAuth, resultService); // students service
 restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_USER_PROFILE, userAuth, userProfileService); // for again capturing current logged in user after reload in redux state being called in the layout in frontend
 restService.use(endpoints.ENDPOINT_BASE_URL + endpoints.ENDPOINT_GROUP_USER, userAuth, userService);
 

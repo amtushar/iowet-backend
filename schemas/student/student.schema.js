@@ -4,10 +4,11 @@ dotenv.config(); // Load the environment variables
 
 
 /********************* Schema Definition **********************/
-const subject = new mongoose.Schema({
+const student = new mongoose.Schema({
 
   studentID: { type: String, unique: true, required: true, trim: true },
   courseID: { type: String, required: true, trim: true },
+  courseName: { type: String, required: true, trim: true },
   name: { type: String, required: true, trim: true },
   guardianName: { type: String, required: true, trim: true },
   rollno: { type: String, required: true, unique: true, trim: true},
@@ -19,7 +20,7 @@ const subject = new mongoose.Schema({
 })
 
 
-const subjectModel = mongoose.model('subject', subject);
+const studentModel = mongoose.model('student', student);
 
 
-module.exports = subjectModel;
+module.exports = studentModel;
