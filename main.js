@@ -30,8 +30,6 @@ const corsOptions = {
             return callback(null, true);  // ✅ Use `true`, NOT `'*'`
         }
         const allowedOrigins = [
-            'http://localhost:3000',
-            'http://13.205.250.66',
             'https://iowet.in',
             'https://www.iowet.in'
 
